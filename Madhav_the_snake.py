@@ -25,15 +25,15 @@ screen_width=800
 window=pygame.display.set_mode((screen_width,screen_height))
 
 #background image
-start=pygame.image.load("start.jpg")
+start=pygame.image.load("public\src\images\start.jpg")
 start=pygame.transform.scale(start,(screen_width,screen_height)).convert_alpha()
-pink=pygame.image.load("pink.jpg")
+pink=pygame.image.load("public\src\images\pink.jpg")
 pink=pygame.transform.scale(pink,(screen_width,screen_height)).convert_alpha()
-black_header=pygame.image.load("black_header.jpg")
+black_header=pygame.image.load("public\src\images\\black_header.jpg")
 black_header=pygame.transform.scale(black_header,(screen_width,100)).convert_alpha()
-red_pause=pygame.image.load("red_pause.jpg")
+red_pause=pygame.image.load("public\src\images\\red_pause.jpg")
 red_pause=pygame.transform.scale(red_pause,(screen_width,screen_height)).convert_alpha()
-red_over=pygame.image.load("red_over.jpg")
+red_over=pygame.image.load("public\src\images\\red_over.jpg")
 red_over=pygame.transform.scale(red_over,(screen_width,screen_height)).convert_alpha()
 
 #title of my game
@@ -138,11 +138,11 @@ def gameloop():
                         velocity_x=0
                     if event.key==pygame.K_ESCAPE:
                         if pause==True:
-                            pygame.mixer.music.load("pause.mp3")
+                            pygame.mixer.music.load("public\src\sounds\pause.mp3")
                             pygame.mixer.music.play()
                             pause=False
                         elif pause==False:
-                            pygame.mixer.music.load("pause.mp3")
+                            pygame.mixer.music.load("public\src\sounds\pause.mp3")
                             pygame.mixer.music.play()
                             pause=True 
 
@@ -160,7 +160,7 @@ def gameloop():
                     
                 #eating the food
                 if abs(snake_x-food_x)<20 and abs(snake_y-food_y)<20:
-                    pygame.mixer.music.load("eat.mp3")
+                    pygame.mixer.music.load("public\src\sounds\eat.mp3")
                     pygame.mixer.music.play()
                     score=score+10
                     food_x=random.randint(150,750)
@@ -191,7 +191,7 @@ def gameloop():
                 #collision logic(puch katne se game over)
                 if head in snake_list[:-1]:
                     over=True
-                    pygame.mixer.music.load("pew.mp3")
+                    pygame.mixer.music.load("public\src\sounds\pew.mp3")
                     pygame.mixer.music.play()    
 
                 #drawing our food 
